@@ -13,9 +13,7 @@ let kepek = [
     "Rokolya Csaba.jpg",
     "Tarjányi Andrásné.jpg",
     "Tarjányi Mihály.jpg"
-]
-
-
+];
 
 const foDiv = document.createElement("div")
 
@@ -33,3 +31,5 @@ foDiv.style.display = "flex";
 foDiv.style.display = "flex";
 foDiv.style.flexWrap = "wrap"; 
 foDiv.style.gap = "15px";
+
+
