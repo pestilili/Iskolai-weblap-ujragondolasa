@@ -25,6 +25,10 @@ body{
                         "main"
                         "footer";
 }
+#biggest-container2 main{
+    height: 80vh;
+
+}
 
 header{
     background: linear-gradient(
