@@ -192,3 +192,12 @@ footer {
 .dropdown{
     width: fit-content;
 }
+
+#ElérhetőségeinkDiv{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10%;
+}
