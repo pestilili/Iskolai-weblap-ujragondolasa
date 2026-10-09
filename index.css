@@ -2,9 +2,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body{
-    font-family: Montserrat, sans-serif;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+html body{
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
 #biggest-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -13,10 +26,11 @@ body{
                         "nav nav nav nav nav"
                         "main main main main aside"
                         "footer footer footer footer footer";
+    
 
 }
 #biggest-container2{
-    
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -26,8 +40,9 @@ body{
                         "footer";
 }
 #biggest-container2 main{
-    height: 80vh;
-
+    min-height: 80vh;
+    display: flex;
+    justify-content: space-between;
 }
 
 header{
@@ -215,7 +230,7 @@ footer {
 
 
 .card {
-  width: 240px;
+  width: 270px;
   height: 360px;
   perspective: 1000px; /* semmit */
 }
@@ -262,4 +277,62 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10%;
+}
+.card_2 {
+  width: 350px;
+  max-height: 600px;
+  padding: 5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#11fff3, #178dfc 50%,#00eeff);
+}
+
+.card__content {
+  background: rgb(119, 121, 250);
+  border-radius: 17px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  
+  
+
+  
+}
+.card__content h1{
+    font-size: 20px;
+}
+.card__content::-webkit-scrollbar{
+    width: 8px;
+    background-color: #0084ffa4;
+    border-radius: 20px;
+}
+.card__content::-webkit-scrollbar-thumb {
+  background-color: #00eeff;           /* the draggable part */
+  border-radius: 5px;
+}
+.card__content img{
+    height: auto;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+
+}
+
+#buszkeseg_container{
+    
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container_flex{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
 }
