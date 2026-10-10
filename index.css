@@ -381,3 +381,31 @@ footer {
 #valtozas_table,#esemeny_table{
     border: 2px, solid, #b4a800;
 }
+
+.harom-oszlop {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.oszlop {
+    width: 220px;
+    min-height: 300px;
+    border: 1px solid #ccc;
+}
+
+.gomb {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.gomb:hover,
+.gomb.aktiv {
+    background: #ddd;
+}
