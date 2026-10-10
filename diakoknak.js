@@ -9,9 +9,10 @@ const jelsz = adatok[1].split("=")[1];
 if (email == "vonak.bence%40diak.szbi-pg.hu" && jelsz == "teszt1234") {
     
     mainDiv.innerHTML = `
-    <div id="diak" style="display: flex; flex-direction: row;">
+    <div id="diak">
+
     <div class="container_flex">
-         <div class="orarend-kartya">
+        <div id="orarend-kartya">
             <h2>Órarendem</h2>
             <div id="ora-ido">--:--:--</div>
             <div id="ora-allapot">Betöltés...</div>
@@ -29,43 +30,44 @@ if (email == "vonak.bence%40diak.szbi-pg.hu" && jelsz == "teszt1234") {
                     </select>
                 </label>
             </div>
-        </div>
+        </div>   
+
         <div id="ebed_kartya">
-                    <h1>Mai ebéd:</h1>
-                    <ul id="ebed_lista">
-                        <li id="leves"></li>
-                        <li id="a_menu"></li>
-                        <li id="b_menu"></li>
-                    </ul>
+            <h1>Mai ebéd:</h1>
+            <ul id="ebed_lista">
+                <li id="leves"></li>
+                <li id="a_menu"></li>
+                <li id="b_menu"></li>
+            </ul>
+        </div>
+    </div>   <!-- container_flex zárása -->
 
+    <div class="container_flex">
+        <div id="esemenyek_kartya">
+            <h1 style="text-align: center;">Órarendi változások</h1>
+            <div id="valtozas_table"></div>
+            <h1 style="text-align: center;">Közelgő események</h1>
+            <div id="esemeny_table"></div>
+        </div>
 
-                </div>
-
-                   
+        <div id="csengetesi_rend">
+            <h1 style="text-align: center;">Csengetési Rend</h1>
+            1: 07:15-08:00<br>
+            2: 08:10-08:55<br>
+            3: 09:05-09:50<br>
+            4: 10:00-10:45<br>
+            5: 10:55-11:40<br>
+            6: 12:00-12:45<br>
+            7: 13:05-13:50<br>
+            8: 13:55-14:40<br>
+            9: 14:45-15:30<br>
+        </div>
     </div>
-<div class="container_flex">
-                <div id="esemenyek_kartya">
-                <h1 style="text-align: center;">Órarendi változások</h1>
-                <div id="valtozas_table"></div>
-                <h1 style="text-align: center;">Közelgő események</h1>
-                <div id="esemeny_table"></div>
 
-            </div> 
-             </div>
-
-    <div class="container_flex"></div>
-                <div class="container_flex"></div>            
-            
-            
-    
-    
-    
-    
-    
-    
-    
-    
 </div>  
+
+            
+
     
 
     `;
@@ -142,15 +144,18 @@ const ebed_kartya = document.getElementById("ebed_kartya")
 const a_menu = document.getElementById("a_menu")
 const b_menu = document.getElementById("b_menu")
 const leves = document.getElementById("leves")
+const valtozas_table = document.getElementById("valtozas_table")
+const esemeny_table = document.getElementById("esemeny_table")
+const csengetesi_rend = document.getElementById("csengetesi_rend")
 const most = new Date();
 let nap = most.getDay();
 const ma = orarend[nap];
 
-let esemenyek = {
-    1: {type: "Helyettesítés" , tortenes: "Hétfő/1/Nincs: Kis Gábor István, Helyettesíti: Csősz Beáta"},
-    2: {type: "Elmarad", tortenes: "Péntek/8/Elmarad."},
-    3: {type: "Ünnep", tortenes: "Október 23.-án ünnepség a csarnokban!"}
-}
+let esemenyek = [
+    {type: "Helyettesítés" , tortenes: "Hétfő/1/Nincs: Kis Gábor István, Helyettesíti: Csősz Beáta"},
+    {type: "Elmarad", tortenes: "Péntek/8/Elmarad."},
+    {type: "Ünnep", tortenes: "Október 23.-án ünnepség megtartása a csarnokban!"}
+]
 //#endregion
 if(!ma){
     ebed_kartya.innerHTML = "<h1> Ma nincs ebéd :( </h1>"
@@ -159,6 +164,15 @@ else{
 a_menu.textContent = `${ebedek[nap].a}`
 b_menu.textContent = `${ebedek[nap].b}`
 leves.textContent = `${ebedek[nap].leves}`
+
+}
+for (const element of esemenyek) {
+    if(element.type === "Ünnep"){
+        esemeny_table.textContent += element.tortenes
+    }
+    else{
+        valtozas_table.innerHTML += `<b>${element.tortenes.split("/")[0]}, ${element.tortenes.split("/")[1]}. Óra:</b> <p>${element.tortenes.split("/")[2]}</p>` 
+    }
 }
 
 
