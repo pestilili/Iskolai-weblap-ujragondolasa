@@ -42,7 +42,6 @@ body {
 #biggest-container2 main{
     min-height: 80vh;
     display: flex;
-    justify-content: space-between;
 }
 
 header{
@@ -283,7 +282,7 @@ footer {
   max-height: 600px;
   padding: 5px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  background-image: linear-gradient(144deg,#11fff3, #178dfc 50%,#00eeff);
+  background-image: linear-gradient(144deg,#ffee00, #f0f34ad2 50%,#b4a800);
 }
 
 .card__content {
@@ -335,4 +334,50 @@ footer {
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 20px;
+}
+.orarend-kartya {
+    width: 600px;
+    min-height: 600px;
+    background: #d2e7f8;
+    border: 4px solid #178dfc;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+}
+.orarend-kartya h2 { margin: 0 0 8px; text-align: center; }
+#ora-ido { font-size: 60px; font-weight: bold; text-align: center; }
+#ora-allapot { text-align: center; margin: 8px 0 12px; min-height: 40px; }
+#ora-lista { list-style: none; margin: 0; padding: 0; }
+#ora-lista li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 8px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+#ora-lista li.elmult    { opacity: 0.4; text-decoration: line-through; }
+#ora-lista li.aktualis  { background: #00eeff; font-weight: bold; }
+#ora-lista li.kovetkezo { background: #ffda0b; }
+.szim { margin-top: 12px; font-size: 18px; display: flex; flex-direction: column; gap: 4px; }
+
+#ebed_kartya{
+    width: 600px;
+    background: #d2e7f8;
+    border: 4px solid #178dfc;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+}
+
+#esemenyek_kartya{
+    width: 600px;
+    background: #d2e7f8;
+    border: 4px solid #178dfc;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+}
+
+#valtozas_table,#esemeny_table{
+    border: 2px, solid, #b4a800;
 }
