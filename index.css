@@ -421,6 +421,55 @@ footer {
     
 }
 
+
 main:not(.MaradAholVan){
     padding-left: 40px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.honeycomb {
+    --size: 100px;
+    --gap: 10px;
+    --color: red;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--gap) * 0.866);
+}
+
+.row {
+    display: flex;
+    gap: var(--gap);
+}
+
+li {
+    position: relative;
+    width: var(--size);
+    aspect-ratio: 1.1547;
+}
+
+.cell {
+    position: absolute;
+    width: var(--size);
+    aspect-ratio: 0.866;
+
+    background: var(--color);
+    clip-path: polygon(
+        0 25%,
+        50% 0,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0 75%
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
