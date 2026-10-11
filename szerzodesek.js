@@ -17,7 +17,6 @@ const megyeLista = document.getElementById("megye_lista");
 const telepulesLista = document.getElementById("telepules_lista");
 const helyszinLista = document.getElementById("helyszin_lista");
 
-// Egyedi megyék összegyűjtése
 const megyek = [];
 
 for (let i = 0; i < szerzodesek.length; i++) {
@@ -34,7 +33,6 @@ for (let i = 0; i < szerzodesek.length; i++) {
     }
 }
 
-// Megyék megjelenítése az első oszlopban
 for (let i = 0; i < megyek.length; i++) {
     const megye = megyek[i];
 
@@ -45,7 +43,6 @@ for (let i = 0; i < megyek.length; i++) {
     megyeLista.appendChild(gomb);
 
     gomb.addEventListener("click", function() {
-        // Kiválasztott megye jelölése
         const gombok = megyeLista.children;
 
         for (let j = 0; j < gombok.length; j++) {
@@ -54,11 +51,9 @@ for (let i = 0; i < megyek.length; i++) {
 
         gomb.classList.add("aktiv");
 
-        // Korábbi települések és helyszínek törlése
         telepulesLista.innerHTML = "";
         helyszinLista.innerHTML = "";
 
-        // Az adott megye településeinek összegyűjtése
         const telepulesek = [];
 
         for (let j = 0; j < szerzodesek.length; j++) {
@@ -77,7 +72,6 @@ for (let i = 0; i < megyek.length; i++) {
             }
         }
 
-        // Települések megjelenítése a második oszlopban
         for (let j = 0; j < telepulesek.length; j++) {
             const telepules = telepulesek[j];
 
@@ -88,12 +82,10 @@ for (let i = 0; i < megyek.length; i++) {
             telepulesLista.appendChild(telepulesGomb);
 
             telepulesGomb.addEventListener("click", function() {
-                // Korábbi helyszínek törlése
                 helyszinLista.innerHTML = "";
 
                 const helyszinek = [];
 
-                // Helyszínek összegyűjtése
                 for (let k = 0; k < szerzodesek.length; k++) {
                     if (
                         szerzodesek[k].megye === megye &&
@@ -104,19 +96,19 @@ for (let i = 0; i < megyek.length; i++) {
                         for (let m = 0; m < helyszinek.length; m++) {
                             if (
                                 helyszinek[m] ===
-                                szerzodesek[k].helyszin
+                                szerzodesek[k].nev
                             ) {
                                 megvan = true;
                             }
                         }
 
                         if (megvan === false) {
-                            helyszinek.push(szerzodesek[k].helyszin);
+                            helyszinek.push(szerzodesek[k].nev);
                         }
                     }
                 }
 
-                // Helyszínek megjelenítése a harmadik oszlopban
+                
                 for (let k = 0; k < helyszinek.length; k++) {
                     const helyszinGomb =
                         document.createElement("button");
