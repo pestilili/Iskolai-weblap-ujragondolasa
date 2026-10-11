@@ -3,6 +3,577 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *, *::before, *::after {
+  box-sizing: border-box;
+}
+html body{
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#biggest-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:"header header header header header"
+                        "nav nav nav nav nav"
+                        "main main main main aside"
+                        "footer footer footer footer footer";
+    
+
+}
+#biggest-container2{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+                        "nav"
+                        "main"
+                        "footer";
+}
+#biggest-container2 main{
+    min-height: 80vh;
+    display: flex;
+}
+
+header{
+    background: linear-gradient(
+        to right in oklab,
+        #1a3a7c 0%,
+        #8ec5ff 100%
+       
+    );
+    width: 100%;
+    height: fit-content;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+header img{
+    height: 135px;
+    width: 135px;
+}
+nav {
+    font-size: 23px;
+    color: black;
+    grid-area: nav;
+    background-color: #1a3a5c;
+    position: sticky;
+    top: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+
+}
+nav a{
+    color: white;
+    text-decoration: none   ;
+    padding-left: 20px;
+}
+nav a:hover{
+    font-weight: bold;
+    
+}
+main{
+    color: black;
+    grid-area: main;
+    background-color: rgba(80, 135, 255, 0.767);
+    min-width: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#aside-flex{
+    font-size: 200px;
+    color: black;
+    grid-area: aside;
+    background-color: rgba(80, 135, 255, 0.767) ;
+    height: auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+aside img{
+    max-width: 100%;
+    height: auto;
+}
+aside{
+    background-color:rgba(80, 135, 255, 0.767);
+}
+footer {
+    background-color: #1a3a5c;
+    color: white;
+    font-size: 20px;
+    grid-area: footer;
+    padding: 20px;
+    text-align: center;
+    height: auto;
+    
+}
+#partnerek{
+    text-align: left;
+
+}
+#partnerek a{
+    color: bisque;
+}
+#partnerek li::marker{
+    color: bisque;
+}
+#partnerek a:hover{
+    color: aliceblue;
+}
+
+#focim{
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 40%;
+    height: auto;
+    text-align: justify;
+}
+#header_kepek{
+   width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+#sor1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    
+
+}
+#sor2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    
+    
+
+}
+#sor1 div{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    
+}
+#sor2 div{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+.block{
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    font-size: 25px;
+    background-color: #d2e7f8e5;
+    border: 10px solid rgba(255, 218, 11, 0.863);
+    text-align: justify;
+    padding: 20px;
+}
+.dropbtn {
+  font-size: 23px;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #d2e7f8;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+.dropdown{
+    width: fit-content;
+}
+
+
+
+.card {
+  width: 270px;
+  height: 360px;
+  perspective: 1000px; /* semmit */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /*megfordítja a képet, de tükrözve*/
+  transition: transform 1.25s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  color: #fff;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #F08A5D;
+  color: #fff;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+#Kepek{
+    display: flex;
+    justify-content: center;
+}
+#ElérhetőségeinkDiv{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+.card_2 {
+  width: 350px;
+  max-height: 600px;
+  padding: 5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#ffee00, #f0f34ad2 50%,#b4a800);
+}
+
+.card__content {
+  background: rgb(119, 121, 250);
+  border-radius: 17px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  
+  
+
+  
+}
+.card__content h1{
+    font-size: 20px;
+}
+.card__content::-webkit-scrollbar{
+    width: 8px;
+    background-color: #0084ffa4;
+    border-radius: 20px;
+}
+.card__content::-webkit-scrollbar-thumb {
+  background-color: #00eeff;           
+  border-radius: 5px;
+}
+.card__content img{
+    height: auto;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+
+}
+
+#buszkeseg_container{
+    
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container_flex{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.container_flex2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+#diak{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+#diak .container_flex{
+    flex: 1;
+    min-width: 0;
+}
+#orarend-kartya,#ebed_kartya, #esemenyek_kartya,#csengetesi_rend{
+    width: 100%;
+    background: #d2e7f8;
+    border: 4px solid #178dfc;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    text-align: center;
+}
+
+
+#orarend-kartya h2 { margin: 0 0 8px; text-align: center; }
+#ora-ido { font-size: 60px; font-weight: bold; text-align: center; }
+#ora-allapot { text-align: center; margin: 8px 0 12px; min-height: 40px; }
+#ora-lista { list-style: none; margin: 0; padding: 0; }
+#ora-lista li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 8px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+#ora-lista li.elmult    { opacity: 0.4; text-decoration: line-through; }
+#ora-lista li.aktualis  { background: #00eeff; font-weight: bold; }
+#ora-lista li.kovetkezo { background: #ffda0b; }
+.szim { margin-top: 12px; font-size: 18px; display: flex; flex-direction: column; gap: 4px; }
+
+
+
+
+
+
+#valtozas_table,#esemeny_table{
+    border: 2px solid #b4a800;
+}
+
+.harom-oszlop {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.oszlop {
+    width: 220px;
+    min-height: 300px;
+}
+
+.gomb {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: #d2e7f8e5;;
+    cursor: pointer;
+}
+
+.gomb:hover,
+.gomb.aktiv {
+    background: white;
+}
+
+#dokumentumok3{
+    margin-left: 10%;
+    width: 50%;
+    background-color: rgba(151, 65, 252, 0.2); 
+    margin-bottom: 5%;
+    border: 3px solid rgba(255, 218, 11, 0.863);
+    
+}
+
+main:not(.MaradAholVan){
+    padding-left: 40px;
+}
+
+
+.card_3 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card_3 img {
+  width: 100%;
+  height: 100%;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card_3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.card_3:hover .card__content_3 {
+  transform: rotateX(0deg);
+}
+
+.card__title_3 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card_3:hover img {
+  scale: 0;
+}
+.card_3:hover {
+  height: 600px;                 
+  transform: scale(1.05);       
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+.card__description_3 {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card_4 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card_4 img {
+  width: fit-content;
+  height: fit-content;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card_4:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content_4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.card_4:hover .card__content_4 {
+  transform: rotateX(0deg);
+}
+
+.card__title_4 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card_4:hover img{
+  scale: 0;
+}
+
+.card__description_4 {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
 html body{
@@ -304,8 +875,8 @@ footer {
     border-radius: 20px;
 }
 .card__content::-webkit-scrollbar-thumb {
-  background-color: #00eeff;           
-  border-radius: 5px;
+    background-color: #00eeff;           /* the draggable part */
+        border-radius: 5px;
 }
 .card__content img{
     height: auto;
@@ -328,13 +899,6 @@ footer {
     
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 20px;
-}
-
-.container_flex2{
-    display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
 }
@@ -427,4 +991,46 @@ footer {
 
 main:not(.MaradAholVan){
     padding-left: 40px;
+}
+
+.honeycomb {
+  --size: 250px;                         /* hatszög szélessége */
+  --h: calc(var(--size) * 0.866);        /* hatszög magassága */
+  --color: #16477f;
+  --gap: 8px;
+  --step: calc((var(--h) + var(--gap)) * 0.866); /* oszlopok közti vízszintes lépés */
+
+  position: absolute;      /* a fejléc (hero) div-jén belül, jobbra */
+  right: -30px;
+  top: -25px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* az oszlopok egymásba csúsznak, hogy a csúcsok a bemélyedésekbe illeszkedjenek */
+.col + .col {
+  margin-left: calc(var(--step) - var(--size));
+}
+
+/* minden második oszlop fél hatszöggel lejjebb */
+.col:nth-child(even) {
+  margin-top: calc((var(--h) + var(--gap)) / 2);
+}
+
+.cell {
+    width: var(--size);
+    height: var(--h);
+    background: var(--color);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+
+header {         
+  position: relative;
+  overflow: hidden;
 }
