@@ -423,44 +423,43 @@ main:not(.MaradAholVan){
 }
 
 .honeycomb {
-    --cell-size: 120px;
-    --cell-color: #16477f;
-    --gap: 8px;
+  --size: 250px;                         /* hatszög szélessége */
+  --h: calc(var(--size) * 0.866);        /* hatszög magassága */
+  --color: #16477f;
+  --gap: 8px;
+  --step: calc((var(--h) + var(--gap)) * 0.866); /* oszlopok közti vízszintes lépés */
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  position: absolute;      /* a fejléc (hero) div-jén belül, jobbra */
+  right: -30px;
+  top: -25px;
+  display: flex;
+  align-items: flex-start;
 }
 
-.row {
-    display: flex;
-    gap: var(--gap);
-    margin-bottom: 8px;
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
-/* Minden második sor eltolása */
-.row.offset {
-    margin-left: 64px;
+/* az oszlopok egymásba csúsznak, hogy a csúcsok a bemélyedésekbe illeszkedjenek */
+.col + .col {
+  margin-left: calc(var(--step) - var(--size));
+}
+
+/* minden második oszlop fél hatszöggel lejjebb */
+.col:nth-child(even) {
+  margin-top: calc((var(--h) + var(--gap)) / 2);
 }
 
 .cell {
-    width: var(--cell-size);
-    aspect-ratio: 1.1547;
-    flex-shrink: 0;
+    width: var(--size);
+    height: var(--h);
+    background: var(--color);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
 
-    background: var(--cell-color);
-
-    clip-path: polygon(
-        25% 0,
-        75% 0,                      
-    100% 50%,
-    75% 100%,
-    25% 100%,
-    0 50%
-    );
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+header {         
+  position: relative;
+  overflow: hidden;
 }
