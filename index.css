@@ -330,7 +330,7 @@ footer {
 .container_flex{
     
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 20px;
 }
