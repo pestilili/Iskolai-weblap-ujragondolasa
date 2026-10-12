@@ -47,9 +47,8 @@ body {
 header{
     background: linear-gradient(
         to right in oklab,
-        #1a3a7c 0%,
-        #8ec5ff 100%
-       
+        #8ec5ff 0%,
+        #1a3a7c 100%,
     );
     width: 100%;
     height: fit-content;
@@ -140,7 +139,7 @@ footer {
 #focim{
     margin-top: 100px;
     margin-left: 50px;
-    width: 40%;
+    width: 20%; /*valami felülírja, de nem tudom, hogy mi*/
     height: auto;
     text-align: justify;
 }
@@ -994,7 +993,7 @@ main:not(.MaradAholVan){
 }
 
 .honeycomb {
-  --size: 250px;                         /* hatszög szélessége */
+  --size: 27vh ;                         /* hatszög szélessége */
   --h: calc(var(--size) * 0.866);        /* hatszög magassága */
   --color: #16477f;
   --gap: 8px;
