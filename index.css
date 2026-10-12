@@ -330,7 +330,7 @@ footer {
 .container_flex{
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
 }
@@ -503,6 +503,7 @@ main:not(.MaradAholVan){
 }
 
 .card_4 {
+    margin-top: 80px;
   position: relative;
   width: 300px;
   height: 200px;
@@ -894,13 +895,7 @@ footer {
     gap: 10px;
 }
 
-.container_flex{
-    
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 20px;
-}
+
 #diak{
     display: flex;
     flex-direction: row;
