@@ -39,7 +39,7 @@ for (let i = 0; i < kepek.length; i++) {
     const kepSzov = document.createElement("div")
     const CardInner = document.createElement("div")
 
-    kep.src = "képek/" + kepek[i]
+    kep.src = "kepek/" + kepek[i]
     const kepSzovSzov = document.createTextNode(i)
     kepSzov.appendChild(kepSzovSzov)
     kepDiv.classList += "card"
