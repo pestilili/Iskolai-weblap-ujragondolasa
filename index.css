@@ -581,8 +581,8 @@ main:not(.MaradAholVan){
 }
 
 .card_4 img {
-  width: fit-content;
-  height: fit-content;
+  width: max-content;
+  height:  max-content;
   fill: #333;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -683,4 +683,179 @@ main:not(.MaradAholVan){
 #vissza:hover{
     background-color: #ffffff9f;
     cursor: pointer;   
+}
+
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Telefon (max 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        font-size: 16px;
+        position: relative;
+    }
+    
+    nav a {
+        padding: 14px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: left;
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    /* Dropdown mobilra: mindig látható, nem hover-függő */
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropbtn {
+        display: block;
+        padding: 14px 16px;
+        background: rgba(0,0,0,0.15);
+        font-weight: bold;
+    }
+    
+    .dropdown-content {
+        display: block !important;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        background: rgba(210, 231, 248, 0.95);
+        border-radius: 0;
+    }
+    
+    .dropdown-content a {
+        color: #1a3a5c;
+        padding: 12px 24px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .block {
+        font-size: 16px;
+        padding: 15px;
+        border-width: 5px;
+    }
+    
+    footer {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    #partnerek ul {
+        padding-left: 20px;
+    }
+    
+    /* Kártyák és flex konténerek */
+    .card, .card_2, .card_3, .card_4, .card_5 {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        min-height: 180px;
+    }
+    
+    .card-inner, .card-front, .card-back {
+        height: auto;
+        min-height: 200px;
+    }
+    
+    #buszkeseg_container,
+    #diak,
+    .container_flex2,
+    #ElérhetőségeinkDiv,
+    #Kepek {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .container_flex {
+        width: 100%;
+    }
+    
+    /* Táblázatok görgethetőek */
+    table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Header cím */
+    #focim h1 {
+        font-size: 1.5rem;
+    }
+    
+    #focim h2 {
+        font-size: 1.1rem;
+    }
+    
+    #focim p {
+        font-size: 1rem;
+    }
+    
+    /* Aside képek */
+    #aside-flex img,
+    #aside_flex img,
+    aside img {
+        max-width: 160px;
+        height: auto;
+    }
+}
+
+/* Nagyon kis telefonok (max 480px) */
+@media (max-width: 480px) {
+    #focim h1 {
+        font-size: 1.3rem;
+    }
+    
+    nav {
+        font-size: 15px;
+    }
+    
+    .block {
+        font-size: 15px;
+        padding: 12px;
+    }
+    
+    header img {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+
+
+/* Hamburger menü állapotok */
+@media (max-width: 768px) {
+    nav.closed > a,
+    nav.closed > .dropdown {
+        display: none;
+    }
+    
+    nav.open > a,
+    nav.open > .dropdown {
+        display: block;
+    }
+    
+    nav.closed .hamburger,
+    nav.open .hamburger {
+        display: block !important;
+    }
+    
+    /* Amikor zárt, csak a hamburger látszik */
+    nav.closed {
+        padding: 5px 10px;
+        min-height: 50px;
+    }
 }
