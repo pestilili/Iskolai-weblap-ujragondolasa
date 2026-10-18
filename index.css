@@ -345,6 +345,12 @@ footer {
     flex-wrap: nowrap;
     gap: 20px;
 }
+.container_flex2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 #diak{
     display: flex;
     flex-direction: row;

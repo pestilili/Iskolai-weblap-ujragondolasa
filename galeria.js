@@ -2,7 +2,7 @@ const mainDiv = document.getElementsByTagName("main")[0];
 function Kezdo() {
     
 
-    mainDiv.innerHTML = `<div class="container_flex2" style="justify-content: center; flex-wrap: wrap;">
+    mainDiv.innerHTML = `<div class="container_flex2" style="align-items: center; flex-wrap: wrap;">
             </div>
             
             `
