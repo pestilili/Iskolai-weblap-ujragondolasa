@@ -152,7 +152,7 @@ let nap = most.getDay();
 const ma = orarend[nap];
 
 let esemenyek = [
-    {type: "Helyettesítés" , tortenes: "Hétfő/1/Nincs: Kis Gábor István, Helyettesíti: Csősz Beáta"},
+    {type: "Helyettesítés" , tortenes: "Hétfő/1/Hiányzik: Kiss Gábor István, Helyettesíti: Csősz Beáta"},
     {type: "Elmarad", tortenes: "Péntek/8/Elmarad."},
     {type: "Ünnep", tortenes: "Október 23.-án ünnepség megtartása a csarnokban!"}
 ]

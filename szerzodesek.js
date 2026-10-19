@@ -38,7 +38,7 @@ for (let i = 0; i < megyek.length; i++) {
 
     const gomb = document.createElement("button");
     gomb.classList.add("gomb");
-    gomb.textContent = megye + " ▶";
+    gomb.innerHTML = megye + `<span style="color: rgba(169, 144, 3, 0.86);"> ▶</span>`;
 
     megyeLista.appendChild(gomb);
 
