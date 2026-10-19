@@ -24,7 +24,7 @@ let kepHata = [
     `<div>
             <h1 style="text-align: center;">Csősz Beáta</h1>
             <h2 style="text-align: center;">magyar nyelv és irodalom</h2>
-            <p style="text-align: center;">"Ezek a mai golyák kikészítenek!"</p>
+            <p style="text-align: center;">"Ugye Kálmán nem alszol?"</p>
     </div>`,
     `<div>
             <h1 style="text-align: center;">Csuka Tibor</h1>

@@ -62,6 +62,7 @@ header{
     overflow: hidden;
 }
 
+
 header img{
     height: 135px;
     width: 135px;
@@ -98,7 +99,7 @@ main{
     flex-direction: column;
     gap: 30px;
 }
-#aside-flex{
+#aside_flex{
     font-size: 200px;
     color: black;
     grid-area: aside;
@@ -144,11 +145,11 @@ footer {
     margin-top: 100px;
     margin-left: 50px;
     margin-bottom: 40px;
-    width: 38% !important; 
-    max-width: 38% !important;
-    flex: 0 0 38% !important;
+    width: 38% ; 
+    max-width: 38%;
+    flex: 0 0 38%;
     height: auto;
-    text-align: center;
+    text-align: left;
     position: relative;
     z-index: 2;
     padding-right: 19%;
